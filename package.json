@@ -5,9 +5,11 @@
   "main": "app.js",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "secondthought": "github:robconery/second-thought"
+    "secondthought": "0.0.4"
   },
   "devDependencies": {
+    "mocha": "~1.12.1",
+    "should": "~1.3.0",
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-watch": "^1.0.0"

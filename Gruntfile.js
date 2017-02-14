@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         // setting up Grunt Watch
         watch : {
             files: ['lib/**/*js', 'models/**/*.js'],
-            tasks: ['jshint']
+            tasks: ['jshint', 'mocha']
         }
     });
 

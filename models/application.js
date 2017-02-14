@@ -5,6 +5,7 @@ var Application = function(args){
     app.confirm = args.confirm;
     app.status = "pending";
     app.message = null;
+    app.user = null;
     
     // verify if the application is valid
     app.isValid = function(){
