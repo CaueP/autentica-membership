@@ -4,6 +4,7 @@
   "description": "Membership application made for the course NodeJS Application Patterns of Pluralsight",
   "main": "app.js",
   "dependencies": {
+    "secondthought": "github:robconery/second-thought"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
