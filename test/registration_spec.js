@@ -1,12 +1,25 @@
 var Registration = require("../lib/registration");
+var db = require("secondthought");
 
 describe("Registration", function() {
-
+    var reg = {};
+    before(function(done) {
+        db.connect({db: "membership"}, function(err, db) {
+            reg = new Registration(db);
+            done(); // called when this function is done, then move forward. Avoid assynchronous problems, such as connecting to db
+        });
+    })
     // happy path
     describe("a valid application", function() {
         var regResult = {};
-        before(function() {
-            regResult = Registration.applyForMembership({email: "caue.polimanti@gmail.com", password: "oi", confirm: "oi"});
+        before(function(done) {
+            reg.applyForMembership({
+                    email: "caue.polimanti@gmail.com", 
+                    password: "oi", 
+                    confirm: "oi"}, function(err, result) {
+                        regResult = result;
+                        done();
+                    });
         });
         it("is successful", function() {
             regResult.success.should.equal(true);
